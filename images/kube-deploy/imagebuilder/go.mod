@@ -3,7 +3,7 @@ module sigs.k8s.io/image-builder/images/kube-deploy/imagebuilder
 go 1.12
 
 require (
-	github.com/aws/aws-sdk-go v1.2.2
+	github.com/aws/aws-sdk-go v1.34.0
 	github.com/cloudfoundry-incubator/candiedyaml v0.0.0-20160429080125-99c3df83b515 // indirect
 	github.com/ghodss/yaml v0.0.0-20160604002925-aa0c86205766
 	github.com/go-ini/ini v0.0.0-20160702095645-927d8d7ced54 // indirect
