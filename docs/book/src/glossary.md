@@ -29,6 +29,11 @@ Amazon Web Services
 The Cluster API is a Kubernetes project to bring declarative, Kubernetes-style APIs to cluster creation, configuration, and management. It provides optional, additive functionality on top of core Kubernetes.
 
 [source](https://github.com/kubernetes-sigs/cluster-api)
+[docs](https://cluster-api.sigs.k8s.io)
+
+## CAPIBM
+
+[Cluster API Provider IBM Cloud](https://github.com/kubernetes-sigs/cluster-api-provider-ibmcloud)
 
 ## CAPV
 
@@ -49,9 +54,9 @@ ESXi (formerly ESX) is an enterprise-class, type-1 hypervisor developed by VMwar
 # G
 ---
 
-## GOSS
+## Goss
 
-[Goss](https://github.com/aelsabbahy/goss) is a YAML based serverspec alternative tool for validating a server’s configuration.  It is used in conjunction with [packer-provisioner-goss](https://github.com/YaleUniversity/packer-provisioner-goss/releases) to test if the images have all requisite components to work with cluster API.
+[Goss](https://github.com/goss-org/goss) is a YAML based serverspec alternative tool for validating a server’s configuration.  It is used in conjunction with [packer-provisioner-goss](https://github.com/YaleUniversity/packer-provisioner-goss/releases) to test if the images have all requisite components to work with cluster API.
 
 # K
 ---
@@ -64,7 +69,8 @@ Kubernetes
 
 Kubernetes (K8s) is an open-source system for automating deployment, scaling, and management of containerized applications.
 
-[source](https://kubernetes.io)
+[source](https://github.com/kubernetes/kubernetes)
+[docs](https://kubernetes.io)
 
 # O
 ---
@@ -83,6 +89,14 @@ An open standard for packaging and distributing virtual appliances or, more gene
 
 [source](https://en.wikipedia.org/wiki/Open_Virtualization_Format)
 
+## PowerVS
+
+Power Systems Virtual Server
+
+IBM Power Systems Virtual Server is a Power Systems offering.
+
+[docs](https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-about-virtual-server)
+
 # V
 ---
 
@@ -97,6 +111,14 @@ VirtualBox is a powerful x86 and AMD64/Intel64 virtualization product for enterp
 ## VM
 
 A VM is an abstraction of an operating system from the physical machine by creating a "virtual" representation of the physical hardware the OS expects to interact with, this includes but is not limited to CPU instruction sets, memory, BIOS, PCI buses, etc. A VM is an entirely self-contained entity and shares no components with the host OS. In the case of vSphere the host OS is ESXi (see below).
+
+## VPC
+
+Virtual Private Cloud
+
+A VPC is a public cloud offering that lets an enterprise establish its own private cloud-like computing environment on shared public cloud infrastructure.
+
+[docs](https://www.ibm.com/topics/vpc)
 
 ## vSphere
 

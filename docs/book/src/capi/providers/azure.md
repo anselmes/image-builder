@@ -7,7 +7,7 @@ These images are designed for use with [Cluster API Provider Azure](https://capz
 - An Azure account
 - The Azure CLI installed and configured
 - Set environment variables for `AZURE_SUBSCRIPTION_ID`, `AZURE_CLIENT_ID`, `AZURE_CLIENT_SECRET`
-- Set optional environment variables `RESOURCE_GROUP_NAME`, `STORAGE_ACCOUNT_NAME`, `AZURE_LOCATION` & `GALLERY_NAME` to override the default values
+- Set optional environment variables `RESOURCE_GROUP_NAME`, `BUILD_RESOURCE_GROUP_NAME`, `STORAGE_ACCOUNT_NAME`, `AZURE_LOCATION` & `GALLERY_NAME` to override the default values
 
 ## Building Images
 
@@ -26,7 +26,7 @@ From the `images/capi` directory, run `make build-azure-sig-ubuntu-1804`
 
 From the `images/capi` directory, run `make build-azure-vhd-ubuntu-1804`
 
-> If building the windows images from a Mac there is a known issue with connectivity. Please see details on running [MacOS with ansible](../windows/windows.md#macos-with-ansible).
+> If building the Windows images from a Mac there is a known issue with connectivity. Please see details on running [macOS with ansible](../windows/windows.md#macos-with-ansible).
 
 ### Hyper-V Generation 2 VHDs
 
@@ -48,7 +48,7 @@ Generation 2 images may only be used with Shared Image Gallery, not VHD.
 This table lists several common options that a user may want to set via
 `PACKER_VAR_FILES` to customize their build behavior.  This is not an exhaustive
 list, and greater explanation can be found in the
-[Packer documentation for the Azure ARM builder](https://www.packer.io/docs/builders/azure/arm).
+[Packer documentation for the Azure ARM builder](https://developer.hashicorp.com/packer/plugins/builders/azure/arm).
 
 | Variable | Description | Default |
 |----------|-------------|---------|
@@ -65,12 +65,12 @@ If you are adding features to image builder than it is sometimes useful to work 
 
 ### Provision a VM directly from a VHD
 
-After creating a VHD, create a managed image using the url output from `make build-azure-vhd-<image>` and use it to [create the VM](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/build-image-with-packer#create-a-vm-from-the-packer-image): 
+After creating a VHD, create a managed image using the url output from `make build-azure-vhd-<image>` and use it to [create the VM](https://learn.microsoft.com/azure/virtual-machines/windows/build-image-with-packer#create-a-vm-from-the-packer-image):
 
 ```bash
 az image create -n testvmimage -g cluster-api-images --os-type <Windows/Linux> --source <storage url for vhd file>
 az vm create -n testvm --image testvmimage -g cluster-api-images
 ```
 
-### Debugging packer scripts
-There are several ways to debug packer scripts: https://www.packer.io/docs/other/debugging.html
+### Debugging Packer scripts
+There are several ways to debug Packer scripts: https://developer.hashicorp.com/packer/docs/debugging

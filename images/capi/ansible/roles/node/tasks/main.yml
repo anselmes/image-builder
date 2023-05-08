@@ -62,6 +62,8 @@
     - { param: vm.overcommit_memory, val: 1 }
     - { param: kernel.panic, val: 10 }
     - { param: kernel.panic_on_oops, val: 1 }
+    - { param: fs.inotify.max_user_instances, val: 8192 }
+    - { param: fs.inotify.max_user_watches, val: 524288 }
 
 - name: Disable swap memory
   shell: |
@@ -84,7 +86,6 @@
     name: auditd
     state: started
     enabled: yes
-  when: ansible_os_family != "Flatcar"
 
 - name: configure auditd rules for containerd
   copy:
@@ -94,6 +95,15 @@
     group: root
     mode: 0644
   when: ansible_os_family != "Flatcar"
+
+- name: configure auditd rules for containerd (Flatcar)
+  copy:
+    src: etc/audit/rules.d/containerd.rules-flatcar
+    dest: /etc/audit/rules.d/containerd.rules
+    owner: root
+    group: root
+    mode: 0644
+  when: ansible_os_family == "Flatcar"
 
 - name: Ensure reverse packet filtering is set as strict
   sysctl:
@@ -116,7 +126,7 @@
   template:
     src: etc/udev/rules.d/90-etcd-tuning.rules
     dest: /etc/udev/rules.d/90-etcd-tuning.rules
-    mode: 0744
+    mode: 0644
 
 - name: Copy etcd network tuning script
   copy:

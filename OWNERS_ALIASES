@@ -14,6 +14,9 @@ aliases:
     - mboersma
   image-builder-openstack-reviewers:
     - hidekazuna
+  image-builder-openstack-maintainers:
+    - drew-viles
+    - yankcrime
   image-builder-cloudstack-reviewers:
     - rohityadavcloud
     - davidjumani
@@ -71,6 +74,10 @@ aliases:
     - randomvariable
     - srm09
     - yastij
+  cluster-api-nutanix-maintainers:
+    - tuxtof
+  cluster-api-nutanix-reviewers:
+    - tuxtof
   kops-maintainers:
     - hakman
     - justinsb
